@@ -1,21 +1,5 @@
-/**
- * bootstrap-paginator.js v0.5
- * --
- * Copyright 2013 Yun Lai <lyonlai1984@gmail.com>
- * --
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
+/*jscs:disable*/
+/*jshint ignore:start*/
 (function ($) {
 
     "use strict"; // jshint ;_;
@@ -51,15 +35,6 @@
 
             var version = (options && options.bootstrapMajorVersion) ? options.bootstrapMajorVersion : $.fn.bootstrapPaginator.defaults.bootstrapMajorVersion,
                 id = this.$element.attr("id");
-
-            if (version === 2 && !this.$element.is("div")) {
-
-                throw "in Bootstrap version 2 the pagination must be a div element. Or if you are using Bootstrap pagination 3. Please specify it in bootstrapMajorVersion in the option";
-            } else if (version > 2 && !this.$element.is("ul")) {
-                throw "in Bootstrap version 3 the pagination root item must be an ul element."
-            }
-
-
 
             this.currentPage = 1;
 
@@ -569,7 +544,7 @@
         containerClass: "",
         size: "normal",
         alignment: "left",
-        bootstrapMajorVersion: 2,
+        bootstrapMajorVersion: 3,
         listContainerClass: "",
         itemContainerClass: function (type, page, current) {
             return (page === current) ? "active" : "";
@@ -655,3 +630,5 @@
 
 
 }(window.jQuery));
+/*jshint ignore:end*/
+/*jscs:enable*/

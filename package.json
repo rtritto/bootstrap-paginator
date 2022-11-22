@@ -1,0 +1,7 @@
+{
+  "name": "bootstrap-paginator",
+  "version": "1.0.2",
+  "description": "Shim port of Bootstrap-Paginator for NPM",
+  "repository": "https://github.com/lyonlai/bootstrap-paginator",
+  "main": "src/bootstrap-paginator.js"
+}
