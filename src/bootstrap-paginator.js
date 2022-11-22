@@ -55,7 +55,7 @@
             this.numberOfPages = parseInt(this.options.numberOfPages, 10); //setup the numberOfPages to be shown
 
             //move the set current page after the setting of total pages. otherwise it will cause out of page exception.
-            if (options && typeof (options.currentPage)  !== 'undefined') {
+            if (options && typeof (options.currentPage) !== 'undefined') {
 
                 this.setCurrentPage(options.currentPage);
             }
@@ -199,21 +199,21 @@
             var currentTarget = $(event.currentTarget);
 
             switch (type) {
-            case "first":
-                currentTarget.bootstrapPaginator("showFirst");
-                break;
-            case "prev":
-                currentTarget.bootstrapPaginator("showPrevious");
-                break;
-            case "next":
-                currentTarget.bootstrapPaginator("showNext");
-                break;
-            case "last":
-                currentTarget.bootstrapPaginator("showLast");
-                break;
-            case "page":
-                currentTarget.bootstrapPaginator("show", page);
-                break;
+                case "first":
+                    currentTarget.bootstrapPaginator("showFirst");
+                    break;
+                case "prev":
+                    currentTarget.bootstrapPaginator("showPrevious");
+                    break;
+                case "next":
+                    currentTarget.bootstrapPaginator("showNext");
+                    break;
+                case "last":
+                    currentTarget.bootstrapPaginator("showLast");
+                    break;
+                case "page":
+                    currentTarget.bootstrapPaginator("show", page);
+                    break;
             }
 
         },
@@ -245,25 +245,25 @@
             this.$element.addClass("pagination");
 
             switch (size.toLowerCase()) {
-            case "large":
-            case "small":
-            case "mini":
-                this.$element.addClass($.fn.bootstrapPaginator.sizeArray[this.options.bootstrapMajorVersion][size.toLowerCase()]);
-                break;
-            default:
-                break;
+                case "large":
+                case "small":
+                case "mini":
+                    this.$element.addClass($.fn.bootstrapPaginator.sizeArray[this.options.bootstrapMajorVersion][size.toLowerCase()]);
+                    break;
+                default:
+                    break;
             }
 
             if (this.options.bootstrapMajorVersion === 2) {
                 switch (alignment.toLowerCase()) {
-                case "center":
-                    this.$element.addClass("pagination-centered");
-                    break;
-                case "right":
-                    this.$element.addClass("pagination-right");
-                    break;
-                default:
-                    break;
+                    case "center":
+                        this.$element.addClass("pagination-centered");
+                        break;
+                    case "right":
+                        this.$element.addClass("pagination-right");
+                        break;
+                    default:
+                        break;
                 }
             }
 
@@ -352,43 +352,43 @@
 
             switch (type) {
 
-            case "first":
-                if (!this.getValueFromOption(this.options.shouldShowPage, type, page, this.currentPage)) { return; }
-                text = this.options.itemTexts(type, page, this.currentPage);
-                title = this.options.tooltipTitles(type, page, this.currentPage);
-                break;
-            case "last":
-                if (!this.getValueFromOption(this.options.shouldShowPage, type, page, this.currentPage)) { return; }
-                text = this.options.itemTexts(type, page, this.currentPage);
-                title = this.options.tooltipTitles(type, page, this.currentPage);
-                break;
-            case "prev":
-                if (!this.getValueFromOption(this.options.shouldShowPage, type, page, this.currentPage)) { return; }
-                text = this.options.itemTexts(type, page, this.currentPage);
-                title = this.options.tooltipTitles(type, page, this.currentPage);
-                break;
-            case "next":
-                if (!this.getValueFromOption(this.options.shouldShowPage, type, page, this.currentPage)) { return; }
-                text = this.options.itemTexts(type, page, this.currentPage);
-                title = this.options.tooltipTitles(type, page, this.currentPage);
-                break;
-            case "page":
-                if (!this.getValueFromOption(this.options.shouldShowPage, type, page, this.currentPage)) { return; }
-                text = this.options.itemTexts(type, page, this.currentPage);
-                title = this.options.tooltipTitles(type, page, this.currentPage);
-                break;
+                case "first":
+                    if (!this.getValueFromOption(this.options.shouldShowPage, type, page, this.currentPage)) { return; }
+                    text = this.options.itemTexts(type, page, this.currentPage);
+                    title = this.options.tooltipTitles(type, page, this.currentPage);
+                    break;
+                case "last":
+                    if (!this.getValueFromOption(this.options.shouldShowPage, type, page, this.currentPage)) { return; }
+                    text = this.options.itemTexts(type, page, this.currentPage);
+                    title = this.options.tooltipTitles(type, page, this.currentPage);
+                    break;
+                case "prev":
+                    if (!this.getValueFromOption(this.options.shouldShowPage, type, page, this.currentPage)) { return; }
+                    text = this.options.itemTexts(type, page, this.currentPage);
+                    title = this.options.tooltipTitles(type, page, this.currentPage);
+                    break;
+                case "next":
+                    if (!this.getValueFromOption(this.options.shouldShowPage, type, page, this.currentPage)) { return; }
+                    text = this.options.itemTexts(type, page, this.currentPage);
+                    title = this.options.tooltipTitles(type, page, this.currentPage);
+                    break;
+                case "page":
+                    if (!this.getValueFromOption(this.options.shouldShowPage, type, page, this.currentPage)) { return; }
+                    text = this.options.itemTexts(type, page, this.currentPage);
+                    title = this.options.tooltipTitles(type, page, this.currentPage);
+                    break;
             }
 
             itemContainer.addClass(itemContainerClass).append(itemContent);
 
-            itemContent.addClass(itemContentClass).html(text).on("click", null, {type: type, page: page}, $.proxy(this.onPageItemClicked, this));
+            itemContent.addClass(itemContentClass).html(text).on("click", null, { type: type, page: page }, $.proxy(this.onPageItemClicked, this));
 
             if (this.options.pageUrl) {
                 itemContent.attr("href", this.getValueFromOption(this.options.pageUrl, type, page, this.currentPage));
             }
 
             if (this.options.useBootstrapTooltip) {
-                tooltipOpts = $.extend({}, this.options.bootstrapTooltipOptions, {title: title});
+                tooltipOpts = $.extend({}, this.options.bootstrapTooltipOptions, { title: title });
 
                 itemContent.tooltip(tooltipOpts);
             } else {
@@ -423,9 +423,21 @@
                 pageStart = (this.currentPage % this.numberOfPages === 0) ? (parseInt(this.currentPage / this.numberOfPages, 10) - 1) * this.numberOfPages + 1 : parseInt(this.currentPage / this.numberOfPages, 10) * this.numberOfPages + 1,//calculates the start page.
                 output = [],
                 i = 0,
-                counter = 0;
+                counter = 0,
+                padWith;
 
             pageStart = pageStart < 1 ? 1 : pageStart;//check the range of the page start to see if its less than 1.
+
+            if (this.options.centerCurrentPage && this.numberOfPages % 2 !== 0) {
+                padWith = (this.numberOfPages - 1) / 2;
+                if (this.currentPage - padWith <= 0 || (this.totalPages - this.numberOfPages + 1) <= 0) {
+                    pageStart = 1;
+                } else if (this.currentPage + padWith > this.totalPages) {
+                    pageStart = this.totalPages - this.numberOfPages + 1;
+                } else {
+                    pageStart = this.currentPage - padWith;
+                }
+            }
 
             for (i = pageStart, counter = 0; counter < this.numberOfPages && i <= totalPages; i = i + 1, counter = counter + 1) {//fill the pages
                 output.push(i);
@@ -550,6 +562,7 @@
             return "";
         },
         currentPage: 1,
+        centerCurrentPage: false,
         numberOfPages: 5,
         totalPages: 1,
         pageUrl: function (type, page, current) {
@@ -563,21 +576,21 @@
             var result = true;
 
             switch (type) {
-            case "first":
-                result = (current !== 1);
-                break;
-            case "prev":
-                result = (current !== 1);
-                break;
-            case "next":
-                result = (current !== this.totalPages);
-                break;
-            case "last":
-                result = (current !== this.totalPages);
-                break;
-            case "page":
-                result = true;
-                break;
+                case "first":
+                    result = (current !== 1);
+                    break;
+                case "prev":
+                    result = (current !== 1);
+                    break;
+                case "next":
+                    result = (current !== this.totalPages);
+                    break;
+                case "last":
+                    result = (current !== this.totalPages);
+                    break;
+                case "page":
+                    result = true;
+                    break;
             }
 
             return result;
@@ -585,31 +598,31 @@
         },
         itemTexts: function (type, page, current) {
             switch (type) {
-            case "first":
-                return "&lt;&lt;";
-            case "prev":
-                return "&lt;";
-            case "next":
-                return "&gt;";
-            case "last":
-                return "&gt;&gt;";
-            case "page":
-                return page;
+                case "first":
+                    return "&lt;&lt;";
+                case "prev":
+                    return "&lt;";
+                case "next":
+                    return "&gt;";
+                case "last":
+                    return "&gt;&gt;";
+                case "page":
+                    return page;
             }
         },
         tooltipTitles: function (type, page, current) {
 
             switch (type) {
-            case "first":
-                return "Go to first page";
-            case "prev":
-                return "Go to previous page";
-            case "next":
-                return "Go to next page";
-            case "last":
-                return "Go to last page";
-            case "page":
-                return (page === current) ? "Current page is " + page : "Go to page " + page;
+                case "first":
+                    return "Go to first page";
+                case "prev":
+                    return "Go to previous page";
+                case "next":
+                    return "Go to next page";
+                case "last":
+                    return "Go to last page";
+                case "page":
+                    return (page === current) ? "Current page is " + page : "Go to page " + page;
             }
         },
         bootstrapTooltipOptions: {

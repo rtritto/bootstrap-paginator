@@ -146,6 +146,12 @@
                     <td>It marks the current page. If the current page is set out of range, an exception will be thrown.</td>
                 </tr>
                 <tr>
+                    <td class="bp-example-docs-option-attr">centerCurrentPage</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>The current page will be in the center, and padded with other values. To centerCurrentPage option work, the number of pages must be odd, otherwise it will act as false. See the <a href="#center-current-page" title="Click to see the Center Current Page example">Center Current Page example</a> for more detail.</td>
+                </tr>
+                <tr>
                     <td class="bp-example-docs-option-attr">numberOfPages</td>
                     <td>number</td>
                     <td>5</td>
@@ -511,6 +517,25 @@
                 </code>
             </pre>
         </div>
+        <div id="center-current-page">
+            <h3>Center Current Page</h3>
+            <p>This behavior is activated when attribute <strong class="bp-example-docs-option-attr">centerCurrentPage</strong> is true and <strong class="bp-example-docs-option-attr">numberOfPages</strong> is odd. The following example shows the 5 pages example with center current page</p>
+            <div class="bp-docs-example">
+                <div id="bp-example-center-current-page"></div>
+            </div>
+            <pre class="javascript">
+                <code>
+        var options = {
+            centerCurrentPage: true,
+            currentPage: 3,
+            totalPages: 10,
+            numberOfPages:5
+        }
+
+        $('#example').bootstrapPaginator(options);
+                </code>
+            </pre>
+        </div>
         <div id="number-of-pages">
             <h3>Number of Pages</h3>
             <p>The max number of pages is controllable via attribute <strong class="bp-example-docs-option-attr">numberOfPages</strong>. This attribute accepts only integer. The following example shows the 3 pages example.</p>
@@ -624,7 +649,7 @@
             </div>
             <pre class="javascript">
                 <code id="get-pages-code">
-        
+
                 </code>
             </pre>
         </div>
@@ -666,7 +691,7 @@
             </div>
             <pre class="javascript">
                 <code id="set-option-code">
-    
+
                 </code>
             </pre>
         </div>
@@ -997,6 +1022,18 @@
         }
 
         $('#bp-example-page-item-container-class').bootstrapPaginator(options);
+    }
+
+    function centerCurrentPageDemo(){
+
+        var options = {
+            centerCurrentPage: true,
+            currentPage: 3,
+            totalPages: 10,
+            numberOfPages: 5
+        }
+
+        $('#bp-example-center-current-page').bootstrapPaginator(options);
     }
 
     function numberOfPagesDemo(){
@@ -1351,6 +1388,7 @@
         useBootstrapTooltip();
         bootstrapTooltipConfiguration();
         itemContainerClassDemo();
+        centerCurrentPageDemo();
         numberOfPagesDemo();
         pageUrlDemo();
         presenceOfPageDemo();

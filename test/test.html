@@ -1736,6 +1736,499 @@
 
         })
 
+        /**
+         *
+         * Tests the get page result  with center option. When the current page is 1 under the configuration, there will be no first and previous page,
+         * current page will be 1, next page will be 2, and last page will be 11. Second page within the pages item is 2.
+         *
+         * */
+        test("test centerCurrentPage, getPage result, current page 1",function(){
+            options = {
+                containerClass:"pagination"
+                , currentPage:1
+                , numberOfPages: 3
+                , totalPages:11
+                , centerCurrentPage:true
+                , pageUrl:function(type,page){
+                    return null;
+                }
+                , onPageClicked:null
+                , onPageChanged:null
+
+
+            };
+
+            container.bootstrapPaginator(options);
+
+            var pages = container.bootstrapPaginator("getPages");
+
+            equal(pages.current,1,"Current page of initial setup is 1.")
+
+            equal(pages.first,1,"No first page in the initial setup")
+
+            equal(pages.prev, 1, "No previous page in the initial setup")
+
+            equal(pages.next, 2, "Next page of initial setup is 2")
+
+            equal(pages.last, 11, "Last page of initial setup is 11")
+
+            equal(pages[1],2,"page number 1's value must be 2");
+
+
+
+        })
+
+        /**
+         *
+         * Tests the get page result  with center option. When the current page is 2 under the configuration, first and previous page is 1,
+         * next is 3, last is 11, the 3rd page item is 3.
+         *
+         * */
+        test("test centerCurrentPage, getPage result, current page 2",function(){
+            options = {
+                containerClass:"pagination"
+                , currentPage:2
+                , numberOfPages: 3
+                , totalPages:11
+                , centerCurrentPage:true
+                , pageUrl:function(type,page){
+                    return null;
+                }
+                , onPageClicked:null
+                , onPageChanged:null
+
+
+            };
+
+            container.bootstrapPaginator(options);
+
+            var pages = container.bootstrapPaginator("getPages");
+
+            equal(pages.current,2,"Current page of initial setup is 2.")
+
+            equal(pages.first,1,"First page is one")
+
+            equal(pages.prev, 1, "Previous page is 1")
+
+            equal(pages.next, 3, "Next page of initial setup is 3")
+
+            equal(pages.last, 11, "Last page of initial setup is 11")
+
+            equal(pages[2],3,"page number 2's value must be 3");
+
+            equal(pages.length, 3, "Length of the pages is 3")
+
+
+        })
+
+        /**
+         *
+         * Tests the get page result with center option. When the current page is 3 under the configuration, first page is 1 and previous page is 2,
+         * next is 4, last is 11, the 4rd page item is 4.
+         *
+         * */
+        test("test centerCurrentPage, getPage result, current page 3",function(){
+            options = {
+                containerClass:"pagination"
+                , currentPage:3
+                , numberOfPages: 3
+                , totalPages:11
+                , centerCurrentPage:true
+                , pageUrl:function(type,page){
+                    return null;
+                }
+                , onPageClicked:null
+                , onPageChanged:null
+
+
+            };
+
+            container.bootstrapPaginator(options);
+
+            var pages = container.bootstrapPaginator("getPages");
+
+            equal(pages.current,3,"Current page of initial setup is 3.")
+
+            equal(pages.first,1,"First page is one")
+
+            equal(pages.prev, 2, "Previous page is 2")
+
+            equal(pages.next, 4, "Next page of initial setup is 4")
+
+            equal(pages.last, 11, "Last page of initial setup is 11")
+
+            equal(pages[2],4,"page number 2's value must be 4");
+
+            equal(pages.length, 3, "Length of the pages is 3")
+
+
+        })
+
+        /**
+         * Tests the get page result with center option, when the current page is 10, first is 1, previous is 9, next and last are 11.
+         *
+         * */
+        test("test centerCurrentPage, getPage result, current page 10",function(){
+            options = {
+                containerClass:"pagination"
+                , currentPage:10
+                , numberOfPages: 3
+                , totalPages:11
+                , centerCurrentPage:true
+                , pageUrl:function(type,page){
+                    return null;
+                }
+                , onPageClicked:null
+                , onPageChanged:null
+
+
+            };
+
+            container.bootstrapPaginator(options);
+
+            var pages = container.bootstrapPaginator("getPages");
+
+            equal(pages.current,10,"Current page of initial setup is 10.")
+
+            equal(pages.first,1,"First page is 1")
+
+            equal(pages.prev, 9, "Previous page is 9")
+
+            equal(pages.next, 11, "Next page is 11")
+
+            equal(pages.last, 11, "Last page is 11")
+
+            equal(pages.length, 3, "Length of the pages is 3")
+        })
+
+        /**
+         * Tests the get page result with center option, when the current page is 11, first is 1, previous is 10, no next and last item.
+         * the length of pages is 2.
+         *
+         * */
+        test("test centerCurrentPage, getPage result, current page 11",function(){
+            options = {
+                containerClass:"pagination"
+                , currentPage:11
+                , numberOfPages: 3
+                , totalPages:11
+                , centerCurrentPage:true
+                , pageUrl:function(type,page){
+                    return null;
+                }
+                , onPageClicked:null
+                , onPageChanged:null
+
+
+            };
+
+            container.bootstrapPaginator(options);
+
+            var pages = container.bootstrapPaginator("getPages");
+
+            equal(pages.current,11,"Current page of initial setup is 11.")
+
+            equal(pages.first,1,"First page is 1")
+
+            equal(pages.prev, 10, "Previous page is 10")
+
+            equal(pages.next, 11, "No next page")
+
+            equal(pages.last, 11, "No last page")
+
+            equal(pages.length, 3, "Length of the pages is 3")
+        })
+
+        /**
+         * Test case 1, there will be 5 items, 1,2,3 and >, >>
+         * */
+        test("test centerCurrentPage, rendering for page = 1",function(){
+
+            options = {
+                containerClass:"pagination"
+                , currentPage:1
+                , numberOfPages: 3
+                , totalPages:11
+                , centerCurrentPage:true
+                , pageUrl:function(type,page){
+                    return null;
+                }
+                , onPageClicked:null
+                , onPageChanged:null
+
+
+            };
+
+            container.bootstrapPaginator(options);
+
+            var containerChildren = container.children();
+
+            equal(containerChildren.length,1,"must be only 1 element in the container");
+
+            var outerContainer = $(containerChildren[0])
+
+            ok(outerContainer.is("ul"),"outer container element is ul");
+
+            var pageItems = outerContainer.children();
+
+            equal(pageItems.length,5,"page items in this case is 3 page items plus next and last");
+
+            equal($($(pageItems[0]).children()[0]).text(),'1',"first page is 1, no previous and first");
+
+            ok($(pageItems[0]).hasClass("active"),"first page 1 is an active page");
+
+            equal($($(pageItems[1]).children()[0]).text(),'2',"second item is 2");
+
+            equal($($(pageItems[2]).children()[0]).text(),'3',"third item is 3");
+
+            equal($($(pageItems[3]).children()[0]).text(),">","fourth item is next");
+
+            equal($($(pageItems[4]).children()[0]).text(),">>","fifth item is last");
+
+        })
+
+        /**
+         * Test case 2, there will be 7 items, <<, <, 1, 2, 3 and >, >>
+         * */
+        test("test centerCurrentPage, rendering for page = 2", function(){
+
+            container.bootstrapPaginator("destroy");
+
+            options = {
+                containerClass:"pagination"
+                , currentPage:2
+                , numberOfPages: 3
+                , totalPages:11
+                , centerCurrentPage:true
+                , pageUrl:function(type,page){
+                    return null;
+                }
+                , onPageClicked:null
+                , onPageChanged:null
+
+
+            };
+
+            container.bootstrapPaginator(options);
+
+            var containerChildren = container.children();
+
+            equal(containerChildren.length,1,"must be only 1 element in the container");
+
+            var outerContainer = $(containerChildren[0])
+
+            ok(outerContainer.is("ul"),"outer container element is ul");
+
+            var pageItems = outerContainer.children();
+
+            equal(pageItems.length,7,"page items in this case is first, previous, 3 page items plus next and last");
+
+            equal($($(pageItems[0]).children()[0]).text(),'<<',"first item is first page with text <<");
+
+            equal($($(pageItems[1]).children()[0]).text(),'<',"second item is previous page wiht text <");
+
+            equal($($(pageItems[2]).children()[0]).text(),'1',"third page item is 1");
+
+            equal($($(pageItems[3]).children()[0]).text(),'2',"fourth page item is 2");
+
+            ok($(pageItems[3]).hasClass("active"),"fourth page item is an active page");
+
+            equal($($(pageItems[4]).children()[0]).text(),'3',"fifth page item is 3");
+
+            equal($($(pageItems[5]).children()[0]).text(),">","sixth item is next");
+
+            equal($($(pageItems[6]).children()[0]).text(),">>","seventh item is last");
+
+        })
+
+        /**
+         * Test case 3, there will be 7 items, <<, <, 2, 3, 4 and >, >>
+         * */
+        test("test centerCurrentPage, rendering for page = 3", function(){
+
+            container.bootstrapPaginator("destroy");
+
+            options = {
+                containerClass:"pagination"
+                , currentPage:3
+                , numberOfPages: 3
+                , totalPages:11
+                , centerCurrentPage:true
+                , pageUrl:function(type,page){
+                    return null;
+                }
+                , onPageClicked:null
+                , onPageChanged:null
+
+
+            };
+
+            container.bootstrapPaginator(options);
+
+            var containerChildren = container.children();
+
+            equal(containerChildren.length,1,"must be only 1 element in the container");
+
+            var outerContainer = $(containerChildren[0])
+
+            ok(outerContainer.is("ul"),"outer container element is ul");
+
+            var pageItems = outerContainer.children();
+
+            equal(pageItems.length,7,"page items in this case is first, previous, 3 page items plus next and last");
+
+            equal($($(pageItems[0]).children()[0]).text(),'<<',"first item is first page with text <<");
+
+            equal($($(pageItems[1]).children()[0]).text(),'<',"second item is previous page wiht text <");
+
+            equal($($(pageItems[2]).children()[0]).text(),'2',"third page item is 2");
+
+            equal($($(pageItems[3]).children()[0]).text(),'3',"fourth page item is 3");
+
+            ok($(pageItems[3]).hasClass("active"),"fourth page item is an active page");
+
+            equal($($(pageItems[4]).children()[0]).text(),'4',"fifth page item is 4");
+
+            equal($($(pageItems[5]).children()[0]).text(),">","sixth item is next");
+
+            equal($($(pageItems[6]).children()[0]).text(),">>","seventh item is last");
+
+        })
+
+        /**
+         * Test case 10, there will be 7 items, <<, <, 9, 10, 11, >, >>
+         * */
+        test("test centerCurrentPage, rendering for page = 10", function(){
+
+            container.bootstrapPaginator("destroy");
+
+            options = {
+                containerClass:"pagination"
+                , currentPage:10
+                , numberOfPages: 3
+                , totalPages:11
+                , centerCurrentPage:true
+                , pageUrl:function(type,page){
+                    return null;
+                }
+                , onPageClicked:null
+                , onPageChanged:null
+
+
+            };
+
+            container.bootstrapPaginator(options);
+
+            var containerChildren = container.children();
+
+            equal(containerChildren.length,1,"must be only 1 element in the container");
+
+            var outerContainer = $(containerChildren[0])
+
+            ok(outerContainer.is("ul"),"outer container element is ul");
+
+            var pageItems = outerContainer.children();
+
+            equal(pageItems.length,7,"page items in this case is first, previous, 3 page items plus next and last");
+
+            equal($($(pageItems[0]).children()[0]).text(),'<<',"first item is first page with text <<");
+
+            equal($($(pageItems[1]).children()[0]).text(),'<',"second item is previous page wiht text <");
+
+            equal($($(pageItems[2]).children()[0]).text(),'9',"third page item is 9");
+
+            equal($($(pageItems[3]).children()[0]).text(),'10',"fourth page item is 10");
+
+            ok($(pageItems[3]).hasClass("active"),"fourth page item is an active page");
+
+            equal($($(pageItems[4]).children()[0]).text(),'11',"fourth page item is 11");
+
+            equal($($(pageItems[5]).children()[0]).text(),">","fifth item is next");
+
+            equal($($(pageItems[6]).children()[0]).text(),">>","sixth item is last");
+
+        })
+
+        /**
+         * Test case 11, there will be 5 items, <<, <, 9, 10, 11
+         * */
+        test("test centerCurrentPage, rendering for page = 11",function(){
+
+            options = {
+                containerClass:"pagination"
+                , currentPage:11
+                , numberOfPages: 3
+                , totalPages:11
+                , centerCurrentPage:true
+                , pageUrl:function(type,page){
+                    return null;
+                }
+                , onPageClicked:null
+                , onPageChanged:null
+
+
+            };
+
+            container.bootstrapPaginator(options);
+
+            var containerChildren = container.children();
+
+            equal(containerChildren.length,1,"must be only 1 element in the container");
+
+            var outerContainer = $(containerChildren[0])
+
+            ok(outerContainer.is("ul"),"outer container element is ul");
+
+            var pageItems = outerContainer.children();
+
+            equal(pageItems.length,5,"page items in this case is first, previous, 3 page items");
+
+            equal($($(pageItems[0]).children()[0]).text(),'<<',"first item is first page with text <<");
+
+            equal($($(pageItems[1]).children()[0]).text(),'<',"second item is previous page wiht text <");
+
+            equal($($(pageItems[2]).children()[0]).text(),'9',"third page item is 9");
+
+            equal($($(pageItems[3]).children()[0]).text(),'10',"fourth page item is 10");
+
+            equal($($(pageItems[4]).children()[0]).text(),'11',"fifth page item is 11");
+
+            ok($(pageItems[4]).hasClass("active"),"fifth page item is an active page");
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         module("Bad input testing",{
 
             setup: function(){
