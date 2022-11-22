@@ -33,9 +33,6 @@
 
             this.$element = $(element);
 
-            var version = (options && options.bootstrapMajorVersion) ? options.bootstrapMajorVersion : $.fn.bootstrapPaginator.defaults.bootstrapMajorVersion,
-                id = this.$element.attr("id");
-
             this.currentPage = 1;
 
             this.lastPage = 1;
