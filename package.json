@@ -1,8 +1,8 @@
 {
   "name": "bootstrap-paginator",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Shim port of Bootstrap-Paginator for NPM",
-  "repository": "https://github.com/lyonlai/bootstrap-paginator",
+  "repository": "https://github.com/rtritto/bootstrap-paginator/tree/developer",
   "main": "src/bootstrap-paginator.js",
-  "packageManager": "yarn@4.0.0-rc.31"
+  "packageManager": "yarn@4.0.2"
 }

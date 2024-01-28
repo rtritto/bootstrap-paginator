@@ -1,4 +1,4 @@
-# Bootstrap Paginator v1.0
+# Bootstrap Paginator v2.0
 
 ---
 
@@ -6,9 +6,13 @@ Bootstrap Paginator is a jQuery plugin that simplifies the rendering of Bootstra
 
 # Changes
 
+v 2.0
+
+* Add the support for Bootstrap v4.
+
 v 1.0
 
-* Add the support for bootstrap v3.
+* Add the support for Bootstrap v3.
 * Make the page change happened in page click event stoppable
 * Remove the visibility control within getPages function and leave it with shouldShowPage function.
 

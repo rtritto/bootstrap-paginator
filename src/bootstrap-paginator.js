@@ -230,7 +230,7 @@
                 size = this.options.size || "normal",
                 alignment = this.options.alignment || "left",
                 pages = this.getPages(),
-                listContainer = this.options.bootstrapMajorVersion === 2 ? $("<ul></ul>") : this.$element,
+                listContainer = this.options.bootstrapMajorVersion === 2 ? $("<ul class=\"pagination\"></ul>") : this.$element,
                 listContainerClass = this.options.bootstrapMajorVersion === 2 ? this.getValueFromOption(this.options.listContainerClass, listContainer) : null,
                 first = null,
                 prev = null,
@@ -341,8 +341,8 @@
          * */
         buildPageItem: function (type, page) {
 
-            var itemContainer = $("<li></li>"),//creates the item container
-                itemContent = $("<a></a>"),//creates the item content
+            var itemContainer = $("<li class=\"page-item\"></li>"),//creates the item container
+                itemContent = $("<a class=\"page-link\"></a>"),//creates the item content
                 text = "",
                 title = "",
                 itemContainerClass = this.options.itemContainerClass(type, page, this.currentPage),
