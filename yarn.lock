@@ -2,10 +2,22 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 7
+  version: 8
+  cacheKey: 10c0
 
 "bootstrap-paginator@workspace:.":
   version: 0.0.0-use.local
   resolution: "bootstrap-paginator@workspace:."
+  dependencies:
+    uglify-js: "npm:^3.17.4"
   languageName: unknown
   linkType: soft
+
+"uglify-js@npm:^3.17.4":
+  version: 3.17.4
+  resolution: "uglify-js@npm:3.17.4"
+  bin:
+    uglifyjs: bin/uglifyjs
+  checksum: 8b7fcdca69deb284fed7d2025b73eb747ce37f9aca6af53422844f46427152d5440601b6e2a033e77856a2f0591e4167153d5a21b68674ad11f662034ec13ced
+  languageName: node
+  linkType: hard
