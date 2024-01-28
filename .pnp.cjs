@@ -10,14 +10,14 @@ const RAW_RUNTIME_STATE =
   ],\
   "dependencyTreeRoots": [\
     {\
-      "name": "bootstrap-paginator",\
+      "name": "bootstrap-paginator-2",\
       "reference": "workspace:."\
     }\
   ],\
   "enableTopLevelFallback": true,\
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "fallbackExclusionList": [\
-    ["bootstrap-paginator", ["workspace:."]]\
+    ["bootstrap-paginator-2", ["workspace:."]]\
   ],\
   "fallbackPool": [\
   ],\
@@ -31,11 +31,11 @@ const RAW_RUNTIME_STATE =
         "linkType": "SOFT"\
       }]\
     ]],\
-    ["bootstrap-paginator", [\
+    ["bootstrap-paginator-2", [\
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["bootstrap-paginator", "workspace:."],\
+          ["bootstrap-paginator-2", "workspace:."],\
           ["uglify-js", "npm:3.17.4"]\
         ],\
         "linkType": "SOFT"\
