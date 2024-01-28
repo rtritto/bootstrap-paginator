@@ -12,13 +12,13 @@
     "url": "https://github.com/rtritto/bootstrap-paginator/issues"
   },
   "homepage": "https://github.com/rtritto/bootstrap-paginator/tree/developer#readme",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
+  "files": [
+    "build/bootstrap-paginator.min.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "bash ./build.sh"
+    "build": "bash ./build.sh",
+    "publish": "npm publish"
   },
   "author": "rtritto",
   "license": "ISC",
