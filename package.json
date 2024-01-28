@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/rtritto/bootstrap-paginator.git#developer"
   },
-  "main": "src/bootstrap-paginator.js",
+  "main": "build/bootstrap-paginator.min.js",
   "packageManager": "yarn@4.0.2",
   "bugs": {
     "url": "https://github.com/rtritto/bootstrap-paginator/issues"
